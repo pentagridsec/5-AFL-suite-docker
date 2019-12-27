@@ -95,35 +95,35 @@ Built December 2019
 
 36C3 release
 
-###AFL++ https://github.com/vanhauser-thc/AFLplusplus
+### AFL++ https://github.com/vanhauser-thc/AFLplusplus
 commit b91000fc9e2b86ffe96bef7a30d30b7e0f1f66fc
 Author: van Hauser <vh@thc.org>
 Date:   Thu Dec 19 01:53:32 2019 +0100
 
-###recidivm https://github.com/jwilk/recidivm
+### recidivm https://github.com/jwilk/recidivm
 commit 6d0a8d06c22031c8a791d9b28c35a9dbf9b3d3de
 Author: Jakub Wilk <jwilk@jwilk.net>
 Date:   Sat May 25 22:21:17 2019 +0200
 
-###preeny https://github.com/zardus/preeny
+### preeny https://github.com/zardus/preeny
 commit 4a67ed98baf97216fc4ab162ed48edb4665f7030
 Author: Calle Svensson <calle.svensson@zeta-two.com>
 Date:   Tue Oct 29 10:57:52 2019 +0100
 
-###afl-kit https://github.com/kcwu/afl-kit
+### afl-kit https://github.com/kcwu/afl-kit
 commit 4a1de78a68ec192c4ec2370ebaf5b6afe2380553
 Author: Denis Kasak <dkasak@users.noreply.github.com>
 Date:   Thu Mar 28 07:38:19 2019 +0000
 
-###dyninst https://github.com/dyninst/dyninst
+### dyninst https://github.com/dyninst/dyninst
 10.1.0
 
-###afl-dyninst https://github.com/vanhauser-thc/afl-dyninst
+### afl-dyninst https://github.com/vanhauser-thc/afl-dyninst
 commit 77f20d8e4d855fa9585e786ad879aeebdb3fb5d0
 Author: van Hauser <vh@thc.org>
 Date:   Fri Sep 20 14:49:36 2019 +0200
 
-###JQF https://github.com/rohanpadhye/jqf
+### JQF https://github.com/rohanpadhye/jqf
 commit 5e9346440b43a341537064efd6c74d434f42fc63
 Author: Rohan Padhye <rohanpadhye@cs.berkeley.edu>
 Date:   Mon Oct 14 14:02:07 2019 -0700
