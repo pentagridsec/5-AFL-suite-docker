@@ -96,40 +96,40 @@ Covid-19-is-annoying release
 
 Desock is now part of AFL++, no more need for preeny
 
-###AFL++ https://github.com/vanhauser-thc/AFLplusplus
+### AFL++ https://github.com/vanhauser-thc/AFLplusplus
 ```
 commit c7de368dc20078116bcb2e34b0f2237127802841
 Merge: a5d4c8d fbd9994
 Author: van Hauser <vh@thc.org>
 ```
 
-###recidivm https://github.com/jwilk/recidivm
+### recidivm https://github.com/jwilk/recidivm
 ```
 commit 6d0a8d06c22031c8a791d9b28c35a9dbf9b3d3de
 Author: Jakub Wilk <jwilk@jwilk.net>
 Date:   Sat May 25 22:21:17 2019 +0200
 ```
 
-###afl-kit https://github.com/kcwu/afl-kit
+### afl-kit https://github.com/kcwu/afl-kit
 ```
 commit 4a1de78a68ec192c4ec2370ebaf5b6afe2380553
 Author: Denis Kasak <dkasak@users.noreply.github.com>
 Date:   Thu Mar 28 07:38:19 2019 +0000
 ```
 
-###dyninst https://github.com/dyninst/dyninst
+### dyninst https://github.com/dyninst/dyninst
 ```
 10.1.0
 ```
 
-###afl-dyninst https://github.com/vanhauser-thc/afl-dyninst
+### afl-dyninst https://github.com/vanhauser-thc/afl-dyninst
 ```
 commit 5361d6a303ee987b933f4851e2dc78e6084083ab
 Author: van Hauser <vh@thc.org>
 Date:   Thu Apr 16 10:43:13 2020 +0200
 ```
 
-###JQF
+### JQF
 ```
 commit 10955e72aeb463b24b7c2d11e869a7fab62fb488
 Merge: 008432b fc1933b
