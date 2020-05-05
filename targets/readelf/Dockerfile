@@ -1,5 +1,5 @@
 
-FROM afl-blackbox AS afl-readelf
+FROM pentagrid/afl-blackbox AS afl-readelf
 
 # From now on compile by default with AFL...
 ENV	CC=/afl/afl-clang \

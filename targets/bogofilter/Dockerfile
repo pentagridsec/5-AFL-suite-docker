@@ -37,11 +37,11 @@
 
 # cd /targets && AFL_PRELOAD=/usr/local/lib/afl/libdislocator.so afl-fuzz -i /targets/bogofilter-1.2.5/src/tests/inputs -o ./afl_out -M main -- /targets/bogofilter-1.2.5/build-afl/src/bogofilter -e -u -p -d ./home_bogofilter/
 
-FROM afl-base AS afl-bogofilter
+FROM pentagrid/afl-base AS afl-bogofilter
 
 # From now on compile by default with AFL...
-ENV	CC=/afl/afl-clang-fast \
-	CXX=/afl/afl-clang-fast++
+ENV	CC=/afl/afl-clang \
+	CXX=/afl/afl-clang++
 
 # afl-clang build first
 RUN mkdir /targets && \
@@ -50,7 +50,7 @@ RUN mkdir /targets && \
 	echo "fix https://gitlab.com/bogofilter/bogofilter/issues/1 start" && \
 	sed -i 's/*clang) gcc4/*clang*) gcc4/g' ./configure && \
 	echo "fix end" && \
-	mkdir -p build-afl/afl_in && cd build-afl && CC=afl-clang-fast CXX=afl-clang-fast++ CFLAGS="-Wno-error" ../configure && CFLAGS="-Wno-error" make && cd ..
+	mkdir -p build-afl/afl_in && cd build-afl && CC=afl-clang CXX=afl-clang++ CFLAGS="-Wno-error" ../configure && CFLAGS="-Wno-error" make && cd ..
 
 # regular clang build
 RUN cd /targets/bogofilter-1.2.5 && \
@@ -66,5 +66,5 @@ RUN cd /targets/bogofilter-1.2.5/ && mkdir build-afl-asan && cd build-afl-asan &
 	AFL_USE_ASAN=1 CC=afl-clang CXX=afl-clang++ ASAN_OPTIONS="abort_on_error=1:detect_leaks=0:symbolize=0:allocator_may_return_null=1" CFLAGS="-Wno-error -fsanitize=address" LDFLAGS='-fsanitize=address' ../configure && \
 	AFL_USE_ASAN=1 CC=afl-clang CXX=afl-clang++ ASAN_OPTIONS="abort_on_error=1:detect_leaks=0:symbolize=0:allocator_may_return_null=1" CFLAGS="-Wno-error -fsanitize=address" make
 
-
+COPY corpus/ /targets/corpus
 

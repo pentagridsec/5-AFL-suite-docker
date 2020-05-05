@@ -96,7 +96,7 @@ Covid-19-is-annoying release
 
 Desock is now part of AFL++, no more need for preeny
 
-### AFL++ https://github.com/vanhauser-thc/AFLplusplus
+### AFL++ https://github.com/AFLplusplus/AFLplusplus
 ```
 commit c7de368dc20078116bcb2e34b0f2237127802841
 Merge: a5d4c8d fbd9994

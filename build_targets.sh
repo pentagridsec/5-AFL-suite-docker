@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker build --target afl-readelf --tag=afl-readelf ./targets/readelf/
+docker build --target afl-bogofilter --tag=afl-bogofilter ./targets/bogofilter/
 
