@@ -77,7 +77,7 @@ ENV AFL_PATH=/afl/ \
 # which is probably the best way rather than rely on the OS provided ones
 # General rule is: do an apt-get install in the same RUN as you need it. That allows to
 # remove a tool more easily by uncommenting lines and then the image size is smaller
-# use llvm-config-?.? for llvm 6.0 and earlier
+# use llvm-config-?.? for llvm 6.0 and earlier and llvm-config-? for 9.0 and earlier
 # AFL++ commit "works for me" as in git reset --hard.
 # Before the big code refactoring of AFL++: c124576a4dc00e31ad5cad118098f46eaa29cd17 -> python2.7-dev and python2.7 instead of python 3!
 # Right after the big code refactoring of AFL++: a67d86c6e2ca58db81f2ddf6d0a4c837be88271d -> python2.7-dev and python2.7 instead of python 3!
@@ -85,7 +85,7 @@ ENV AFL_PATH=/afl/ \
 # && git reset --hard d8059cab6b09bf2e29e8b8db3d40567f193310d5 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install build-essential gcc clang git python3.8-dev python3.8 python3-dev vim flex lib32gcc-10-dev gcc-10-plugin-dev gcc-multilib g++-multilib && \
 	git clone https://github.com/AFLplusplus/AFLplusplus.git /afl && cd /afl/ && \
-	ln -s /usr/bin/llvm-config-? /usr/bin/llvm-config && \
+	ln -s /usr/bin/llvm-config-?? /usr/bin/llvm-config && \
 	make source-only && make install
 
 # TODO: Users can point .cur_input with AFL_TMPDIR to ramdisc: 
