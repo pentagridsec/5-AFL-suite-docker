@@ -1,6 +1,6 @@
 # 5# AFL++ suite docker 
 
-American Fuzzy Lop and friends on Docker. An IT security tool aka fuzzer that employs genetic algorithms in order to efficiently increase code coverage of the test cases.
+See https://www.pentagrid.ch/en/blog/pentagrid-aflplusplus-suite-docker-images/. American Fuzzy Lop and friends on Docker. An IT security tool aka fuzzer that employs genetic algorithms in order to efficiently increase code coverage of the test cases.
 
 This is not the first AFL docker. This Dockerfile is inspired by:
 * Richard Johnson's Dockerfiles for TriforceAFL https://github.com/richinseattle/Dockerfiles
