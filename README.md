@@ -32,12 +32,12 @@ Or if you want to target your own binary, have a look at targets/bogofilter on h
 
 ## Not a goal of these Docker containers:
 
-* Performance or production-grade big-scale fuzzing. However, always trade-off "a simple fuzzer setup could already be running now", "your simple fuzzer setup might be broken", "INPUT CORPUS", "a proper setup might run much faster", "are my debug skills good enough to achieve a *really* proper high-performance setup?", "available CPU time compared to time spent on setting up fuzzer", <INSERT a billion other considerations why people have a hate-love relationship with fuzzing>.
+* Performance or production-grade big-scale fuzzing. However, always trade-off "a simple fuzzer setup could already be running now", "your simple fuzzer setup might be broken", "your complicated fuzzer setup might be broken", "INPUT CORPUS", "a proper setup might run much faster", "are my debug skills good enough to achieve a *really* proper high-performance setup?", "available CPU time compared to time spent on setting up fuzzer", INSERT a billion other considerations why people have a hate-love relationship with fuzzing.
 
 ## Building and running
 
 WARNING: Building this Dockerfile can take hours if you want to build all multi-stages:
-* afl-base: AFL++ (source-only compile), recidivm, preeny, afl-kit download/compilation takes several minutes
+* afl-base: AFL++ (source-only compile), recidivm, afl-kit download/compilation takes several minutes
 * afl-jqf: JQF, maven, openjdk download/compilation takes several minutes
 * afl-binary-only: AFL++ (binary-only compile) download/compilation takes *more than* several minutes
 * afl-blackbox: Dyninst, afl-dyninst download/compilation takes *hours*
@@ -56,7 +56,7 @@ Build everything:
 You can also do individual builds up to the image you want, such as:
 
 ```
-docker build --target afl-base --tag=afl-base .
+docker build --target afl-base --tag=afl-base ./dockerfiles/base/
 ```
 
 Similarly, run the images with (mounting in your fuzzing corpus):
@@ -74,7 +74,6 @@ If you run the afl-demo container, execute /examples/demo.sh in the container to
 * add comments about "git reset --hard" to refer to the newest version that worked for your build. Because next time it breaks, you will be glad to know which last version still worked.
 * test if everything works correctly (at least afl-demo), publish
 
-
 ## TODOs and contributions
 
 We are happy to see pull requests or other contributions:
@@ -86,6 +85,56 @@ We are happy to see pull requests or other contributions:
 * more small tools useful for fuzzing see https://github.com/vanhauser-thc/AFLplusplus/blob/master/docs/sister_projects.txt
 * more images for other tools to fuzz python, ruby, etc. see https://github.com/vanhauser-thc/AFLplusplus/blob/master/docs/sister_projects.txt
 * better defaults for environment variables etc.
+
+## Version 0.2
+
+```
+Ubuntu 20.04
+Built May 2020
+Covid-19-is-annoying release
+```
+
+Desock is now part of AFL++, no more need for preeny
+
+###AFL++ https://github.com/vanhauser-thc/AFLplusplus
+```
+commit c7de368dc20078116bcb2e34b0f2237127802841
+Merge: a5d4c8d fbd9994
+Author: van Hauser <vh@thc.org>
+```
+
+###recidivm https://github.com/jwilk/recidivm
+```
+commit 6d0a8d06c22031c8a791d9b28c35a9dbf9b3d3de
+Author: Jakub Wilk <jwilk@jwilk.net>
+Date:   Sat May 25 22:21:17 2019 +0200
+```
+
+###afl-kit https://github.com/kcwu/afl-kit
+```
+commit 4a1de78a68ec192c4ec2370ebaf5b6afe2380553
+Author: Denis Kasak <dkasak@users.noreply.github.com>
+Date:   Thu Mar 28 07:38:19 2019 +0000
+```
+
+###dyninst https://github.com/dyninst/dyninst
+```
+10.1.0
+```
+
+###afl-dyninst https://github.com/vanhauser-thc/afl-dyninst
+```
+commit 5361d6a303ee987b933f4851e2dc78e6084083ab
+Author: van Hauser <vh@thc.org>
+Date:   Thu Apr 16 10:43:13 2020 +0200
+```
+
+###JQF
+```
+commit 10955e72aeb463b24b7c2d11e869a7fab62fb488
+Merge: 008432b fc1933b
+Author: vasumv <vasumv@berkeley.edu>
+```
 
 ## Version 0.1
 
